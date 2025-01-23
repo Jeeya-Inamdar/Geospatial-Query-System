@@ -27,10 +27,15 @@ export class DocumentController {
     @Param('cityId') cityId: string,
     @Body() createDocumentDto: CreateDocumentDto,
   ) {
-    return this.documentService.createWithinCityBoundary(
-      cityId,
-      createDocumentDto,
-    );
+    try {
+      return this.documentService.createWithinCityBoundary(
+        cityId,
+        createDocumentDto,
+      );
+    } catch (error) {
+      console.error('Error creating document:', error);
+      throw error;
+    }
   }
 
   @Get(':cityId')

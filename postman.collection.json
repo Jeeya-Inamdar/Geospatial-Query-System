@@ -1,0 +1,247 @@
+{
+  "info": {
+    "name": "Geospatial Query System",
+    "_postman_id": "12345678-1234-1234-1234-123456789012",
+    "description": "Postman collection for testing the Geospatial Query System API endpoints.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create City",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"San Francisco\",\n  \"boundary\": {\n    \"type\": \"Polygon\",\n    \"coordinates\": [\n      [\n        [-122.514926, 37.708075],\n        [-122.357031, 37.708075],\n        [-122.357031, 37.832371],\n        [-122.514926, 37.832371],\n        [-122.514926, 37.708075]\n      ]\n    ]\n  }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/city",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "city"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Cities",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/city",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "city"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get City by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/city/60d5ec49f8d2b814c8b5b5b5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "city",
+            "60d5ec49f8d2b814c8b5b5b5"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update City by ID",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Updated San Francisco\",\n  \"boundary\": {\n    \"type\": \"Polygon\",\n    \"coordinates\": [\n      [\n        [-122.514926, 37.708075],\n        [-122.357031, 37.708075],\n        [-122.357031, 37.832371],\n        [-122.514926, 37.832371],\n        [-122.514926, 37.708075]\n      ]\n    ]\n  }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/city/60d5ec49f8d2b814c8b5b5b5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "city",
+            "60d5ec49f8d2b814c8b5b5b5"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete City by ID",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/city/60d5ec49f8d2b814c8b5b5b5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "city",
+            "60d5ec49f8d2b814c8b5b5b5"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Document in City",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Golden Gate Bridge\",\n  \"type\": \"landmark\",\n  \"location\": {\n    \"type\": \"Point\",\n    \"coordinates\": [-122.478255, 37.819929]\n  }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/document/60d5ec49f8d2b814c8b5b5b5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "document",
+            "60d5ec49f8d2b814c8b5b5b5"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Documents in City",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/document/60d5ec49f8d2b814c8b5b5b5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "document",
+            "60d5ec49f8d2b814c8b5b5b5"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Document by ID in City",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/document/60d5ec49f8d2b814c8b5b5b5/60d5ec49f8d2b814c8b5b5b6",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "document",
+            "60d5ec49f8d2b814c8b5b5b5",
+            "60d5ec49f8d2b814c8b5b5b6"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Document by ID in City",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Updated Golden Gate Bridge\",\n  \"type\": \"landmark\",\n  \"location\": {\n    \"type\": \"Point\",\n    \"coordinates\": [-122.478255, 37.819929]\n  }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/document/60d5ec49f8d2b814c8b5b5b5/60d5ec49f8d2b814c8b5b5b6",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "document",
+            "60d5ec49f8d2b814c8b5b5b5",
+            "60d5ec49f8d2b814c8b5b5b6"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Document by ID in City",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/document/60d5ec49f8d2b814c8b5b5b5/60d5ec49f8d2b814c8b5b5b6",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "document",
+            "60d5ec49f8d2b814c8b5b5b5",
+            "60d5ec49f8d2b814c8b5b5b6"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
